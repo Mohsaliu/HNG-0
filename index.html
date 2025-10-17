@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Card</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-testid="test-body">
+  <main data-testid="test-main">
+    <article data-testid="test-profile-card" aria-label=" profile card">
+      <header data-testid="test-card-header">
+        <figure data-testid="test-avatar-figure">
+          <img data-testid="test-user-avatar" src="image 1.JPG" alt="User avatar" width="160" height="160">
+        </figure>
+        <div data-testid="test-header-text">
+          <h2 data-testid="test-user-name">Jimoh Saliu</h2>
+          <p data-testid="test-user-bio">Frontend developer passionate about accessible design, performance, and delightful UX.</p>
+          <p data-testid="test-time-wrapper">Current time (ms): <time data-testid="test-user-time" aria-live="polite"></time></p>
+        </div>
+      </header>
+
+      <section data-testid="test-avatar-controls" aria-labelledby="avatar-controls-title">
+        <h3 id="avatar-controls-title" data-testid="test-avatar-controls-title">Update avatar</h3>
+        <div data-testid="test-avatar-inputs">
+          <label for="avatarUrl" data-testid="test-avatar-url-label">Avatar URL</label>
+          <input data-testid="test-avatar-url-input" type="url" id="avatarUrl" name="avatarUrl" placeholder="https://avatar.com/me.jpg" inputmode="url">
+
+          <label for="avatarFile" data-testid="test-avatar-file-label">Upload image</label>
+          <input data-testid="test-avatar-file-input" type="file" id="avatarFile" name="avatarFile" accept="image/*">
+        </div>
+      </section>
+
+      <nav aria-label="Social links" data-testid="test-user-social-links">
+        <ul data-testid="test-social-list">
+          <li data-testid="test-social-item-twitter">
+            <a data-testid="test-user-social-twitter" href="https://twitter.com" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
+              <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22.46 6c-.77.35-1.6.58-2.46.69a4.27 4.27 0 0 0 1.88-2.36 8.48 8.48 0 0 1-2.7 1.03 4.24 4.24 0 0 0-7.22 3.87 12.04 12.04 0 0 1-8.74-4.43 4.24 4.24 0 0 0 1.31 5.66c-.66-.02-1.28-.2-1.82-.5v.05a4.24 4.24 0 0 0 3.4 4.16c-.31.08-.63.12-.97.12-.24 0-.47-.02-.69-.06a4.24 4.24 0 0 0 3.96 2.95A8.5 8.5 0 0 1 2 19.54a12 12 0 0 0 6.51 1.91c7.81 0 12.08-6.47 12.08-12.08 0-.18 0-.36-.01-.54A8.63 8.63 0 0 0 22.46 6z"/></svg>
+              <span class="visually-hidden">Twitter</span>
+            </a>
+          </li>
+          <li data-testid="test-social-item-github">
+            <a data-testid="test-user-social-github" href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+              <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.2-3.37-1.2-.46-1.17-1.12-1.49-1.12-1.49-.92-.63.07-.62.07-.62 1.02.07 1.56 1.05 1.56 1.05 .9 1.54 2.36 1.1 2.94.84 .09-.65.35-1.1.64-1.35-2.22-.25-4.56-1.11-4.56-4.93 0-1.09.39-1.98 1.03-2.68-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.02 .8-.22 1.66-.33 2.52-.33s1.72.11 2.52.33c1.91-1.29 2.75-1.02 2.75-1.02 .55 1.38.2 2.4.1 2.65 .64.7 1.03 1.59 1.03 2.68 0 3.83-2.34 4.68-4.57 4.93 .36.31.68.92.68 1.86v2.76c0 .26.18.58.69.48A10 10 0 0 0 12 2z"/></svg>
+              <span class="visually-hidden">GitHub</span>
+            </a>
+          </li>
+          <li data-testid="test-social-item-linkedin">
+            <a data-testid="test-user-social-linkedin" href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+              <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.36V9h3.41v1.56h.05c.47-.9 1.62-1.85 3.33-1.85 3.56 0 4.21 2.34 4.21 5.39v6.35zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+              <span class="visually-hidden">LinkedIn</span>
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <section data-testid="test-hobbies-section" aria-labelledby="hobbies-title">
+        <h3 id="hobbies-title" data-testid="test-hobbies-title">Hobbies</h3>
+        <ul data-testid="test-user-hobbies">
+          <li data-testid="test-user-hobby-item-1">Football</li>
+          <li data-testid="test-user-hobby-item-2">Video Games</li>
+          <li data-testid="test-user-hobby-item-3">Meditating</li>
+        </ul>
+      </section>
+
+      <section data-testid="test-dislikes-section" aria-labelledby="dislikes-title">
+        <h3 id="dislikes-title" data-testid="test-dislikes-title">Dislikes</h3>
+        <ul data-testid="test-user-dislikes">
+          <li data-testid="test-user-dislike-item-1">Slow websites</li>
+          <li data-testid="test-user-dislike-item-2">Poor contrast</li>
+          <li data-testid="test-user-dislike-item-3">Unclear UX</li>
+        </ul>
+      </section>
+    </article>
+  </main>
+
+  <script defer src="App.js"></script>
+  <noscript data-testid="test-noscript">JavaScript is required to display current time and avatar updates.</noscript>
+</body>
+  
+</html>
+

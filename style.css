@@ -1,0 +1,137 @@
+*, *::before, *::after { box-sizing: border-box; }
+html, body { height: 100%; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  line-height: 1.6;
+  background: #21294a;
+  color: #e2e8f0;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+}
+
+[data-testid="test-profile-card"] {
+  background: #22266b;
+  border: 1px solid #1f2937;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  padding: 1rem;
+  width: 100%;
+  max-width: 960px;
+  display: grid;
+  gap: 1rem;
+}
+
+[data-testid="test-card-header"] {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  align-items: center;
+}
+
+[data-testid="test-avatar-figure"] {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
+[data-testid="test-user-avatar"] {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #334155;
+  background: #0b1220;
+}
+
+[data-testid="test-header-text"] h2 {
+  margin: 0 0 .25rem 0;
+  font-size: 1.5rem;
+}
+
+[data-testid="test-header-text"] p { margin: 0.25rem 0; }
+
+[data-testid="test-user-social-links"] ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem .75rem;
+}
+
+[data-testid^="test-user-social-"] {
+  color: #93c5fd;
+  text-decoration: none;
+}
+
+[data-testid^="test-user-social-"]:hover {
+  text-decoration: underline;
+}
+
+/* Icon sizing */
+[data-testid^="test-user-social-"] svg {
+  display: block;
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+/* Visually hidden utility for accessible names */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+section ul {
+  margin: .25rem 0 0 0;
+  padding-left: 1.25rem;
+}
+
+[data-testid="test-avatar-inputs"] {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: .5rem;
+}
+
+input[type="url"], input[type="file"] {
+  width: 100%;
+}
+
+a:focus-visible, input:focus-visible, button:focus-visible {
+  outline: 3px solid #38bdf8;
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+@media (min-width: 700px) {
+  [data-testid="test-card-header"] {
+    grid-template-columns: auto 1fr;
+    align-items: center;
+  }
+  [data-testid="test-avatar-figure"] { justify-content: flex-start; }
+}
+
+@media (min-width: 1024px) {
+  [data-testid="test-profile-card"] {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+    padding: 1.25rem 1.5rem;
+  }
+  [data-testid="test-user-avatar"] {
+    width: 180px;
+    height: 180px;
+  }
+}
+
+[data-testid="test-header-text"] { word-break: break-word; }
+
+
