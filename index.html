@@ -7,8 +7,23 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body data-testid="test-body">
+  <nav data-testid="test-main-nav" aria-label="Main navigation">
+    <ul data-testid="test-nav-list">
+      <li data-testid="test-nav-item-home">
+        <button data-testid="test-nav-home" class="nav-button active" aria-current="page">Home</button>
+      </li>
+      <li data-testid="test-nav-item-contact">
+        <button data-testid="test-nav-contact" class="nav-button">Contact Us</button>
+      </li>
+      <li data-testid="test-nav-item-about">
+        <button data-testid="test-nav-about" class="nav-button">About Me</button>
+      </li>
+    </ul>
+  </nav>
+
   <main data-testid="test-main">
-    <article data-testid="test-profile-card" aria-label=" profile card">
+    <div data-testid="test-home-page" class="page active">
+      <article data-testid="test-profile-card" aria-label=" profile card">
       <header data-testid="test-card-header">
         <figure data-testid="test-avatar-figure">
           <img data-testid="test-user-avatar" src="image 1.JPG" alt="User avatar" width="160" height="160">
@@ -72,6 +87,129 @@
         </ul>
       </section>
     </article>
+    </div>
+
+    <div data-testid="test-contact-page" class="page">
+      <main data-testid="test-contact-main">
+        <h1 data-testid="test-contact-title">Contact Us</h1>
+        <form data-testid="test-contact-form" novalidate>
+          <div data-testid="test-contact-field-name">
+            <label for="contactName" data-testid="test-contact-label-name">Full Name *</label>
+            <input 
+              type="text" 
+              id="contactName" 
+              name="name" 
+              data-testid="test-contact-name" 
+              required 
+              aria-describedby="test-contact-error-name"
+            >
+            <div data-testid="test-contact-error-name" class="error-message" aria-live="polite"></div>
+          </div>
+
+          <div data-testid="test-contact-field-email">
+            <label for="contactEmail" data-testid="test-contact-label-email">Email *</label>
+            <input 
+              type="email" 
+              id="contactEmail" 
+              name="email" 
+              data-testid="test-contact-email" 
+              required 
+              aria-describedby="test-contact-error-email"
+            >
+            <div data-testid="test-contact-error-email" class="error-message" aria-live="polite"></div>
+          </div>
+
+          <div data-testid="test-contact-field-subject">
+            <label for="contactSubject" data-testid="test-contact-label-subject">Subject *</label>
+            <input 
+              type="text" 
+              id="contactSubject" 
+              name="subject" 
+              data-testid="test-contact-subject" 
+              required 
+              aria-describedby="test-contact-error-subject"
+            >
+            <div data-testid="test-contact-error-subject" class="error-message" aria-live="polite"></div>
+          </div>
+
+          <div data-testid="test-contact-field-message">
+            <label for="contactMessage" data-testid="test-contact-label-message">Message *</label>
+            <textarea 
+              id="contactMessage" 
+              name="message" 
+              data-testid="test-contact-message" 
+              required 
+              rows="5" 
+              aria-describedby="test-contact-error-message"
+            ></textarea>
+            <div data-testid="test-contact-error-message" class="error-message" aria-live="polite"></div>
+          </div>
+
+          <button type="submit" data-testid="test-contact-submit">Send Message</button>
+        </form>
+        <div data-testid="test-contact-success" class="success-message" aria-live="polite"></div>
+      </main>
+    </div>
+
+    <div data-testid="test-about-page" class="page">
+      <main data-testid="test-about-main">
+        <h1 data-testid="test-about-title">About Me</h1>
+        
+        <section data-testid="test-about-bio-section">
+          <h2 data-testid="test-about-bio-title">Bio</h2>
+          <div data-testid="test-about-bio">
+            <p>I'm Jimoh Saliu, a passionate frontend developer with a deep love for creating accessible, performant, and user-friendly web experiences. My journey in web development began with curiosity about how websites work, and it has evolved into a career focused on building inclusive digital solutions.</p>
+            <p>I believe that great web development goes beyond just writing code - it's about understanding users, their needs, and creating experiences that work for everyone, regardless of their abilities or circumstances.</p>
+          </div>
+        </section>
+
+        <section data-testid="test-about-goals-section">
+          <h2 data-testid="test-about-goals-title">Goals in This Program</h2>
+          <div data-testid="test-about-goals">
+            <ul>
+              <li>Master advanced JavaScript concepts and modern frameworks</li>
+              <li>Deepen my understanding of accessibility best practices</li>
+              <li>Learn advanced testing strategies and automation</li>
+              <li>Build a strong portfolio of real-world projects</li>
+              <li>Connect with like-minded developers and mentors</li>
+            </ul>
+          </div>
+        </section>
+
+        <section data-testid="test-about-confidence-section">
+          <h2 data-testid="test-about-confidence-title">Areas of Low Confidence</h2>
+          <div data-testid="test-about-confidence">
+            <p>While I'm comfortable with frontend development, there are areas where I'd like to grow:</p>
+            <ul>
+              <li><strong>Backend Development:</strong> I have basic knowledge but want to become more proficient with server-side technologies</li>
+              <li><strong>DevOps & Deployment:</strong> Understanding CI/CD pipelines and cloud deployment strategies</li>
+              <li><strong>Advanced Testing:</strong> Writing comprehensive test suites and understanding testing strategies</li>
+              <li><strong>System Design:</strong> Designing scalable applications and understanding architectural patterns</li>
+              <li><strong>Leadership Skills:</strong> Leading technical discussions and mentoring other developers</li>
+            </ul>
+          </div>
+        </section>
+
+        <section data-testid="test-about-future-note-section">
+          <h2 data-testid="test-about-future-note-title">Note to Future Self</h2>
+          <div data-testid="test-about-future-note">
+            <p>Dear Future Saliu,</p>
+            <p>Remember why you started this journey - it was never just about learning to code, but about creating meaningful impact through technology. Don't lose sight of the human element in everything you build. Every line of code should serve a purpose, every feature should solve a real problem.</p>
+            <p>Keep pushing yourself to learn,keep Grinding, but also remember to share your knowledge with others. The best developers are those who lift others up. Stay curious, stay humble, and never stop asking "how can this be better?"</p>
+            <p>You've got this! </p>
+          </div>
+        </section>
+
+        <section data-testid="test-about-extra-section">
+          <h2 data-testid="test-about-extra-title">Extra Thoughts</h2>
+          <div data-testid="test-about-extra">
+            <p>One thing I've learned is that the tech industry moves incredibly fast, but the fundamentals remain constant. Focus on understanding the 'why' behind the 'what', and you'll always be able to adapt to new technologies.</p>
+            <p>I'm excited about the future of web development - from WebAssembly to progressive web apps, there's so much innovation happening. My goal is to not just keep up with these changes, but to contribute to them.</p>
+            <p>When I'm not coding, you'll find me playing football, exploring new video games, or practicing meditation. These activities help me stay balanced and bring fresh perspectives to my work.</p>
+          </div>
+        </section>
+      </main>
+    </div>
   </main>
 
   <script defer src="App.js"></script>

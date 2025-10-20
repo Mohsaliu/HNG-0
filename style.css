@@ -6,9 +6,62 @@ body {
   line-height: 1.6;
   background: #21294a;
   color: #e2e8f0;
-  display: grid;
-  place-items: center;
   padding: 1rem;
+}
+
+[data-testid="test-main-nav"] {
+  background: #22266b;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+[data-testid="test-nav-list"] {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.nav-button {
+  background: transparent;
+  border: 2px solid #334155;
+  color: #e2e8f0;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+}
+
+.nav-button:hover {
+  background: #334155;
+  border-color: #475569;
+}
+
+.nav-button.active {
+  background: #38bdf8;
+  border-color: #38bdf8;
+  color: #0f172a;
+}
+
+.nav-button:focus-visible {
+  outline: 3px solid #38bdf8;
+  outline-offset: 2px;
+}
+
+.page {
+  display: none;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.page.active {
+  display: block;
 }
 
 [data-testid="test-profile-card"] {
@@ -133,5 +186,168 @@ a:focus-visible, input:focus-visible, button:focus-visible {
 }
 
 [data-testid="test-header-text"] { word-break: break-word; }
+
+[data-testid="test-contact-main"], [data-testid="test-about-main"] {
+  background: #22266b;
+  border: 1px solid #1f2937;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+  padding: 2rem;
+  margin: 0 auto;
+}
+
+[data-testid="test-contact-title"], [data-testid="test-about-title"] {
+  margin: 0 0 2rem 0;
+  font-size: 2rem;
+  text-align: center;
+  color: #e2e8f0;
+}
+
+[data-testid="test-contact-form"] {
+  display: grid;
+  gap: 1.5rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+[data-testid^="test-contact-field-"] {
+  display: grid;
+  gap: 0.5rem;
+}
+
+[data-testid^="test-contact-label-"] {
+  font-weight: 600;
+  color: #e2e8f0;
+  font-size: 1rem;
+}
+
+[data-testid="test-contact-name"], 
+[data-testid="test-contact-email"], 
+[data-testid="test-contact-subject"],
+[data-testid="test-contact-message"] {
+  padding: 0.75rem;
+  border: 2px solid #334155;
+  border-radius: 8px;
+  background: #1e293b;
+  color: #e2e8f0;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.2s ease;
+}
+
+[data-testid="test-contact-name"]:focus,
+[data-testid="test-contact-email"]:focus,
+[data-testid="test-contact-subject"]:focus,
+[data-testid="test-contact-message"]:focus {
+  outline: none;
+  border-color: #38bdf8;
+  box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.1);
+}
+
+[data-testid="test-contact-message"] {
+  resize: vertical;
+  min-height: 120px;
+}
+
+[data-testid="test-contact-submit"] {
+  background: #38bdf8;
+  color: #0f172a;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  justify-self: center;
+  min-width: 200px;
+}
+
+[data-testid="test-contact-submit"]:hover {
+  background: #0ea5e9;
+  transform: translateY(-1px);
+}
+
+[data-testid="test-contact-submit"]:focus-visible {
+  outline: 3px solid #38bdf8;
+  outline-offset: 2px;
+}
+
+.error-message {
+  color: #f87171;
+  font-size: 0.875rem;
+  margin-top: 0.25rem;
+  min-height: 1.25rem;
+}
+
+.success-message {
+  background: #065f46;
+  color: #6ee7b7;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+  margin-top: 1rem;
+  display: none;
+}
+
+.success-message.show {
+  display: block;
+}
+
+[data-testid^="test-about-"] h2 {
+  color: #38bdf8;
+  margin: 2rem 0 1rem 0;
+  font-size: 1.5rem;
+  border-bottom: 2px solid #334155;
+  padding-bottom: 0.5rem;
+}
+
+[data-testid^="test-about-"] h2:first-child {
+  margin-top: 0;
+}
+
+[data-testid^="test-about-"] p {
+  margin: 1rem 0;
+  line-height: 1.7;
+}
+
+[data-testid^="test-about-"] ul {
+  margin: 1rem 0;
+  padding-left: 1.5rem;
+}
+
+[data-testid^="test-about-"] li {
+  margin: 0.5rem 0;
+  line-height: 1.6;
+}
+
+[data-testid^="test-about-"] strong {
+  color: #38bdf8;
+}
+
+@media (max-width: 768px) {
+  [data-testid="test-main-nav"] {
+    padding: 0.75rem;
+  }
+  
+  [data-testid="test-nav-list"] {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .nav-button {
+    width: 100%;
+    max-width: 200px;
+  }
+  
+  [data-testid="test-contact-main"], [data-testid="test-about-main"] {
+    padding: 1.5rem;
+  }
+  
+  [data-testid="test-contact-title"], [data-testid="test-about-title"] {
+    font-size: 1.75rem;
+  }
+}
 
 
